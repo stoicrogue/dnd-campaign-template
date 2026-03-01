@@ -1,0 +1,41 @@
+{{ define "main" }}
+  <div class="section-page">
+    <header class="section-header">
+      <h1>{{ .Title }}</h1>
+      {{ if .Description }}
+      <p class="section-description">{{ .Description }}</p>
+      {{ end }}
+    </header>
+
+    <!-- Render the section's own content from _index.md -->
+    <div class="section-content">
+      {{ .Content }}
+    </div>
+
+    <!-- List all pages hierarchically using Hugo's built-in structure -->
+    {{ if .Pages }}
+    <div class="section-pages">
+      {{ template "render-pages" (dict "pages" .Pages.ByTitle "level" 0) }}
+    </div>
+    {{ end }}
+  </div>
+{{ end }}
+
+{{ define "render-pages" }}
+  {{ $pages := .pages }}
+  {{ $level := .level }}
+
+  <ul class="page-list level-{{ $level }}">
+    {{ range $pages }}
+      <li class="page-item">
+        <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+        <small>[{{ .Date | time.Format ":date_long" }}]</small>
+
+        <!-- Recursively render child pages if they exist -->
+        {{ if .Pages }}
+          {{ template "render-pages" (dict "pages" .Pages.ByTitle "level" (add $level 1)) }}
+        {{ end }}
+      </li>
+    {{ end }}
+  </ul>
+{{ end }}

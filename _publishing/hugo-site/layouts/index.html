@@ -1,0 +1,20 @@
+{{ define "main" }}
+<div class="homepage">
+  <!-- Content from _index.md -->
+  <div class="homepage-content">
+    {{ .Content }}
+  </div>
+
+  <!-- Optional: Show all sections with page counts -->
+  <!-- <hr/>
+  <section class="sections-overview">
+    <h2>Section Overview</h2>
+    <dl>
+    {{ range site.Sections }}
+      <dt><strong><a href="{{ .RelPermalink }}">{{ humanize .Section }}</a></strong> <small>({{ len .Pages }} pages)</small></dt>
+      <dd>{{ .Description }}</dd>
+    {{ end }}
+    </dl>
+  </section> -->
+</div>
+{{ end }}

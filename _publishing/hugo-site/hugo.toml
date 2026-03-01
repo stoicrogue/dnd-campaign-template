@@ -1,0 +1,111 @@
+baseurl = "/"
+languageCode = "en-us"
+# Add it only if you keep the theme in the `themes` directory.
+# Remove it if you use the theme as a remote Hugo Module.
+theme = "terminal"
+pagination.pagerSize = 5
+
+# Required for Chroma and the custom syntax highlighting.
+[markup.highlight]
+  noClasses = false
+
+[params]
+  # Show recent posts on homepage
+  showRecentPosts = true
+  recentPostsCount = 5
+
+  # Show section overview
+  showSectionOverview = true
+
+  # Enable section menu auto-generation
+  sectionPagesMenu = "main"
+
+  # dir name of your main content (default is `content/posts`).
+  contentTypeName = "posts"
+
+  # if you set this to 0, only submenu trigger will be visible
+  showMenuItems = 3
+
+  # show selector to switch language
+  showLanguageSelector = false
+
+  # set theme to full screen width
+  fullWidthTheme = false
+
+  # center theme with default width
+  centerTheme = true
+
+  # if your resource directory contains an image called `cover.(jpg|png|webp)`,
+  # then the file will be used as a cover automatically.
+  autoCover = false
+
+  # set post to show the last updated
+  showLastUpdated = false
+
+[params.twitter]
+  creator = ""
+  site = ""
+
+[languages]
+  [languages.en]
+    languageName = "English"
+    title = "[CAMPAIGN_NAME] Campaign"  # e.g. "Tempus Campaign"
+
+    [languages.en.params]
+      subtitle = "A D&D 5e Campaign"
+      owner = "[AUTHOR_NAME]"           # e.g. "Mark Molea"
+      keywords = ""
+      copyright = "&copy; [AUTHOR_NAME] 2025"
+      menuMore = "Show more"
+      readMore = "Read more"
+      readOtherPosts = "Read other posts"
+      newerPosts = "Newer posts"
+      olderPosts = "Older posts"
+      missingContentMessage = "Page not found..."
+      missingBackButtonLabel = "Back to home page"
+      minuteReadingTime = "min read"
+      words = "words"
+
+      [languages.en.params.logo]
+        logoText = "[CAMPAIGN_NAME]"    # e.g. "Tempus"
+        logoHomeLink = "/"
+
+      [languages.en.menu]
+        [[languages.en.menu.main]]
+          identifier = "1_session-notes"
+          name = "01 - Session Notes"
+          url = "/01---session-notes"
+        [[languages.en.menu.main]]
+          identifier = "2_characters"
+          name = "02 - Characters"
+          url = "/02---characters"
+        [[languages.en.menu.main]]
+          identifier = "3_locations"
+          name = "03 - Locations"
+          url = "/03---locations"
+        [[languages.en.menu.main]]
+          identifier = "4_items"
+          name = "04 - Items"
+          url = "/04---items"
+        [[languages.en.menu.main]]
+          identifier = "5_planning"
+          name = "05 - Planning"
+          url = "/05---planning"
+        [[languages.en.menu.main]]
+          identifier = "6_factions"
+          name = "06 - Factions"
+          url = "/06---factions"
+        [[languages.en.menu.main]]
+          identifier = "7_rules"
+          name = "07 - Rules"
+          url = "/07---rules"
+        [[languages.en.menu.main]]
+          identifier = "8_recap"
+          name = "08 - Recap"
+          url = "/08---recap"
+
+[frontmatter]
+  date = ['date', 'publishdate', 'pubdate', 'published', 'lastmod', 'modified']
+  expiryDate = ['expirydate', 'unpublishdate']
+  lastmod = [':git', 'lastmod', 'modified', 'date', 'publishdate', 'pubdate', 'published']
+  publishDate = ['publishdate', 'pubdate', 'published', 'date']

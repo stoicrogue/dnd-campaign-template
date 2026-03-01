@@ -1,0 +1,27 @@
+{{ if eq .Type "alert" }}
+  {{ $icons := dict
+    "caution"   "✖"
+    "important" "◆"
+    "info"      "ℹ"
+    "note"      "ℹ"
+    "quote"     "❝"
+    "tip"       "★"
+    "warning"   "⚠"
+  }}
+  {{ $icon := index $icons .AlertType | default "▸" }}
+  <blockquote class="alert alert-{{ .AlertType }}">
+    <div class="alert-heading">
+      <span class="alert-icon" aria-hidden="true">{{ $icon }}</span>
+      {{ with .AlertTitle }}
+        {{ . }}
+      {{ else }}
+        {{ or (i18n .AlertType) (title .AlertType) }}
+      {{ end }}
+    </div>
+    {{ .Text }}
+  </blockquote>
+{{ else }}
+  <blockquote>
+    {{ .Text }}
+  </blockquote>
+{{ end }}

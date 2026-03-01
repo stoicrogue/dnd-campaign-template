@@ -172,4 +172,12 @@ The template includes: Strong Start, Scenes, Secrets & Clues, Fantastic Location
 
 ## Hugo Publishing (Optional)
 
-These scripts include frontmatter formatting compatible with Hugo static site generation. If you want to publish your campaign notes as a website, set up a separate Hugo project and write copy scripts to pull from this vault.
+The `_publishing/` directory contains a complete publishing pipeline for turning your campaign notes into a static website using [Hugo](https://gohugo.io/).
+
+It includes:
+- `convert_wikilinks.py` — converts `[[wiki-links]]` to Hugo markdown URLs
+- `sync-obsidian-images.py` — copies images from Obsidian to the Hugo `static/` directory
+- `update.sh` — orchestrator; run this to sync the vault to Hugo
+- `hugo-site/` — ready-to-use Hugo site scaffold with the Terminal theme, custom layouts, and a GitHub Actions deploy workflow
+
+See `_publishing/README.md` for full setup instructions.

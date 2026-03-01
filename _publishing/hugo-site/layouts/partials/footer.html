@@ -1,0 +1,21 @@
+<footer class="footer">
+  <div class="footer__inner">
+    <div style="text-align: center; margin-top: 0.5em; font-size: 0.85em; opacity: 0.8;">
+      <p style="margin: 0;">
+        <span>Powered by <a href="https://gohugo.io">Hugo</a></span>
+        <span>:: <a href="https://github.com/panr/hugo-theme-terminal" target="_blank">Theme</a> made by <a href="https://github.com/panr" target="_blank">panr</a></span>
+      </p>
+      <p style="margin: 1em 0;">
+        {{/* Replace [SITE_URL], [CAMPAIGN_NAME], [AUTHOR_NAME], and [AUTHOR_URL] below */}}
+        Unless otherwise noted, <a href="[SITE_URL]">[CAMPAIGN_NAME]</a> &copy; by <a href="[AUTHOR_URL]">[AUTHOR_NAME]</a> is licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a>
+      </p>
+    </div>
+  </div>
+</footer>
+
+{{ $menu := resources.Get "js/menu.js" | js.Build }}
+{{ $cp := resources.Get "js/code.js" | js.Build }}
+
+{{ $bundle := slice $menu $cp | resources.Concat "bundle.js" | resources.Minify }}
+
+<script type="text/javascript" src="{{ $bundle.RelPermalink }}"></script>
