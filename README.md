@@ -2,7 +2,7 @@
 
 A structured Obsidian vault template for running tabletop RPG campaigns. Includes a consistent folder hierarchy, automation scripts for maintaining wiki-links and frontmatter, and a session prep template based on the [Lazy Dungeon Master](https://slyflourish.com/returnofthelazydm.html) method.
 
-Built from the Tempus campaign (45+ sessions, November 2022–October 2025).
+Built from the [Tempus campaign](https://tempus.zennotes.net/) (45+ sessions, November 2022 - February 2026).
 
 ---
 
@@ -10,7 +10,7 @@ Built from the Tempus campaign (45+ sessions, November 2022–October 2025).
 
 1. **Clone or copy** this repo into your Obsidian vaults folder:
    ```bash
-   git clone https://github.com/yourname/dnd-campaign-template my-campaign
+   git clone https://github.com/stoicrogue/dnd-campaign-template my-campaign
    ```
    Or just download the ZIP and rename the folder.
 
